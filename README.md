@@ -31,5 +31,18 @@ WiFiManager wifiManager;
 
 ### Function reference
 
-**update()**
-Create a wifi client and connect the NOAA servers to request current winds and tide data from the station.
+**bool update()**
+Create a wifi client and connect the NOAA servers to request current winds and tide data from the station. Returns true for success or false for connection failure.
+
+
+**float getSpeed(int t)**
+Returns wind speed for time __t__ in knots. Currently update() gets wind speed readings at 6 min intervals for the last 7 time periods (t = 0...7).
+
+
+**float getGust()**
+Returns the current wind gust for the station in knots.
+
+
+**float getDirection()**
+Returns the current wind direction in degrees.
+
